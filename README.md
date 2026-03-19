@@ -1,12 +1,12 @@
 # Sofle Choc Pro BT - Dvorak Layout
 
-Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard with a Dvorak layout featuring homerow mods, combos, Caps Word, tap-dance, and sticky keys.
+Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard with a Dvorak layout featuring thumb cluster modifiers, combos, and Caps Word.
 
 ## Layers
 
 | # | Name     | Activation                | Purpose                          |
 |---|----------|---------------------------|----------------------------------|
-| 0 | Base     | Default                   | Dvorak + GACS homerow mods       |
+| 0 | Base     | Default                   | Dvorak + thumb cluster mods      |
 | 1 | Symbols  | Hold SYM (right thumb)    | Programming symbols and brackets |
 | 2 | Numbers  | Hold NUM (left thumb)     | Right-hand numpad + F-keys       |
 | 3 | Nav      | Hold NAV (left thumb)     | Arrows, system nav, clipboard    |
@@ -17,7 +17,7 @@ Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard w
 
 ## Layer 0: Base (Dvorak)
 
-Homerow mods shown as `tap/hold`. Tap for the letter, hold for the modifier.
+Modifiers are on the thumb cluster. Space and Enter double as Shift when held.
 
 ```
 ╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
@@ -25,11 +25,11 @@ Homerow mods shown as `tap/hold`. Tap for the letter, hold for the modifier.
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
 │  ESC  │   '   │   ,   │   .   │   P   │   Y   │                 │   F   │   G   │   C   │   R   │   L   │ BSPC  │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│  TAB  │ A/GUI │ O/ALT │ E/CTL │ U/SFT │   I   │                 │   D   │ H/SFT │ T/CTL │ N/ALT │ S/GUI │   -   │
+│  TAB  │   A   │   O   │   E   │   U   │   I   │                 │   D   │   H   │   T   │   N   │   S   │   -   │
 ├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
 │       │   ;   │   Q   │   J   │   K   │   X   │ MUTE  │ │ PLAY  │   B   │   M   │   W   │   V   │   Z   │       │
 ╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-                │ (enc) │STICKY │  NAV  │  NUM  │ SPACE │ │ ENTER │  SYM  │  FUN  │STICKY │ (enc) │
+                │  GUI  │  ALT  │  NAV  │  NUM  │SPC/SFT│ │ENT/SFT│  SYM  │  FUN  │  ALT  │  CTL  │
                 ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
 ```
 
@@ -81,13 +81,13 @@ Right-hand numpad layout with arithmetic operators.
 
 ## Layer 3: Navigation (hold NAV)
 
-System navigation with arrows, page controls, and clipboard shortcuts. Left home row has explicit modifiers for Shift+Arrow text selection.
+System navigation with arrows, page controls, and clipboard shortcuts. Left home row has explicit modifiers for Shift+Arrow text selection. Top-left corner has bootloader, studio unlock, and reset keys.
 
 ```
 ╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
-│       │       │       │       │       │       │                 │       │       │       │       │       │       │
+│ BOOT  │STUDIO │       │       │       │       │                 │       │       │       │       │       │       │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│       │       │       │       │       │       │                 │ HOME  │ PG DN │ PG UP │  END  │       │  DEL  │
+│ RESET │       │       │       │       │       │                 │ HOME  │ PG DN │ PG UP │  END  │       │  DEL  │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
 │       │  GUI  │  ALT  │  CTL  │  SFT  │       │                 │   <-  │   v   │   ^   │  ->   │       │ BSPC  │
 ├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
@@ -141,22 +141,17 @@ Activated by holding both NAV and FUN simultaneously. Bluetooth pairing, RGB und
 
 ## Features
 
-### Homerow Mods (GACS)
+### Thumb Cluster Modifiers
 
-Hold a home row key to activate a modifier, tap for the letter. Modifiers are arranged **GUI, Alt, Ctrl, Shift** from pinky to index finger, mirrored on both halves.
+Modifiers live on the thumb keys instead of the home row for a cleaner typing experience.
 
-| Left Hand | Right Hand |
-|-----------|------------|
-| A = GUI   | S = GUI    |
-| O = Alt   | N = Alt    |
-| E = Ctrl  | T = Ctrl   |
-| U = Shift | H = Shift  |
-
-**Anti-misfire protections:**
-- `balanced` flavor -- modifier activates when another key is pressed while holding
-- `quick-tap-ms = 175` -- rapid double-taps always register as letters
-- Opposite-hand-only triggering -- holding A and pressing O won't activate GUI, only cross-hand presses trigger mods
-- `hold-while-undecided` -- responsive modifier feel
+| Left Thumb           | Right Thumb          |
+|----------------------|----------------------|
+| GUI                  | ENTER / hold = Shift |
+| ALT                  | SYM (layer)          |
+| NAV (layer)          | FUN (layer)          |
+| NUM (layer)          | RALT                 |
+| SPACE / hold = Shift | RCTRL                |
 
 ### Combos
 
@@ -172,18 +167,7 @@ Press two adjacent keys simultaneously (within 60ms) on the base layer:
 
 ### Caps Word
 
-Activated via the H+T combo or double-tap left STICKY key. Auto-capitalizes all letters until you press space, enter, or a non-alphanumeric key. Keeps `_` and `-` active for typing `SNAKE_CASE_CONSTANTS` and `HYPHENATED-WORDS`.
-
-### Tap-Dance (STICKY keys)
-
-The two STICKY keys in the thumb cluster support single and double tap:
-
-| Key          | Single Tap      | Double Tap      |
-|--------------|-----------------|-----------------|
-| Left STICKY  | One-shot Shift  | Caps Word       |
-| Right STICKY | One-shot Ctrl   | One-shot Alt    |
-
-**One-shot** means: tap the sticky key, then press your next key -- the modifier applies to just that one keypress. You can chain them: tap Sticky-Shift, tap Sticky-Ctrl, press a key = Ctrl+Shift+key.
+Activated via the H+T combo. Auto-capitalizes all letters until you press space, enter, or a non-alphanumeric key. Keeps `_` and `-` active for typing `SNAKE_CASE_CONSTANTS` and `HYPHENATED-WORDS`.
 
 ### Encoders
 
