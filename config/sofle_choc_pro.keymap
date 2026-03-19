@@ -184,8 +184,8 @@
         nav_layer {
             display-name = "nav";
             bindings = <
-&trans         &trans          &trans         &trans          &trans           &trans                              &trans       &trans          &trans         &trans         &trans           &trans
-&trans         &trans          &trans         &trans          &trans           &trans                              &kp HOME     &kp PG_DN       &kp PG_UP      &kp END        &trans           &kp DEL
+&bootloader    &studio_unlock  &trans         &trans          &trans           &trans                              &trans       &trans          &trans         &trans         &trans           &trans
+&sys_reset     &trans          &trans         &trans          &trans           &trans                              &kp HOME     &kp PG_DN       &kp PG_UP      &kp END        &trans           &kp DEL
 &trans         &kp LGUI        &kp LALT       &kp LCTRL       &kp LSHFT        &trans                              &kp LEFT     &kp DOWN        &kp UP         &kp RIGHT      &trans           &kp BSPC
 &trans         &kp K_UNDO      &kp K_CUT      &kp K_COPY      &kp K_PASTE      &trans    &trans        &trans      &trans       &trans          &trans         &trans         &trans           &trans
                                &trans         &trans          &trans           &trans    &trans        &trans      &trans       &trans          &trans         &trans
