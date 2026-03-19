@@ -1,12 +1,12 @@
 # Sofle Choc Pro BT - Dvorak Layout
 
-Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard with a Dvorak layout featuring thumb cluster modifiers, combos, and Caps Word.
+Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard with a Dvorak layout featuring homerow mods, thumb cluster modifiers, combos, and Caps Word.
 
 ## Layers
 
 | # | Name     | Activation                | Purpose                          |
 |---|----------|---------------------------|----------------------------------|
-| 0 | Base     | Default                   | Dvorak + thumb cluster mods      |
+| 0 | Base     | Default                   | Dvorak + homerow & thumb mods    |
 | 1 | Symbols  | Hold SYM (right thumb)    | Programming symbols and brackets |
 | 2 | Numbers  | Hold NUM (left thumb)     | Right-hand numpad + F-keys       |
 | 3 | Nav      | Hold NAV (left thumb)     | Arrows, system nav, clipboard    |
@@ -17,7 +17,7 @@ Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard w
 
 ## Layer 0: Base (Dvorak)
 
-Modifiers are on the thumb cluster. Space and Enter double as Shift when held.
+Homerow mods shown as `tap/hold`. Thumb cluster has Ctrl on both sides, Space/Enter double as Shift when held.
 
 ```
 ╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
@@ -25,11 +25,11 @@ Modifiers are on the thumb cluster. Space and Enter double as Shift when held.
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
 │  ESC  │   '   │   ,   │   .   │   P   │   Y   │                 │   F   │   G   │   C   │   R   │   L   │ BSPC  │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│  TAB  │   A   │   O   │   E   │   U   │   I   │                 │   D   │   H   │   T   │   N   │   S   │   -   │
+│  TAB  │ A/GUI │ O/ALT │ E/CTL │ U/SFT │   I   │                 │   D   │ H/SFT │ T/CTL │ N/ALT │ S/GUI │   -   │
 ├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
 │       │   ;   │   Q   │   J   │   K   │   X   │ MUTE  │ │ PLAY  │   B   │   M   │   W   │   V   │   Z   │       │
 ╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-                │  GUI  │  ALT  │  NAV  │  NUM  │SPC/SFT│ │ENT/SFT│  SYM  │  FUN  │  ALT  │  CTL  │
+                │  ALT  │  CTL  │  NAV  │  NUM  │SPC/SFT│ │ENT/SFT│  SYM  │  FUN  │  CTL  │  ALT  │
                 ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
 ```
 
@@ -141,17 +141,28 @@ Activated by holding both NAV and FUN simultaneously. Bluetooth pairing, RGB und
 
 ## Features
 
-### Thumb Cluster Modifiers
+### Homerow Mods (GACS)
 
-Modifiers live on the thumb keys instead of the home row for a cleaner typing experience.
+Hold a home row key to activate a modifier, tap for the letter. Mirrored on both halves.
+
+| Left Hand | Right Hand |
+|-----------|------------|
+| A = GUI   | S = GUI    |
+| O = Alt   | N = Alt    |
+| E = Ctrl  | T = Ctrl   |
+| U = Shift | H = Shift  |
+
+**Anti-misfire settings:** `tapping-term-ms = 280`, `require-prior-idle-ms = 150` (typing within 150ms always produces letters), `quick-tap-ms = 200`, opposite-hand-only triggering.
+
+### Thumb Cluster
 
 | Left Thumb           | Right Thumb          |
 |----------------------|----------------------|
-| GUI                  | ENTER / hold = Shift |
-| ALT                  | SYM (layer)          |
+| ALT                  | ENTER / hold = Shift |
+| CTRL                 | SYM (layer)          |
 | NAV (layer)          | FUN (layer)          |
-| NUM (layer)          | RALT                 |
-| SPACE / hold = Shift | RCTRL                |
+| NUM (layer)          | CTRL                 |
+| SPACE / hold = Shift | ALT                  |
 
 ### Combos
 
@@ -164,6 +175,9 @@ Press two adjacent keys simultaneously (within 60ms) on the base layer:
 | , + .   | Backspace | Left top row           |
 | Q + J   | Tab       | Left bottom row        |
 | M + W   | Enter     | Right bottom row       |
+| ; + Q   | Paste     | Left bottom row        |
+| J + K   | Copy      | Left bottom row        |
+| K + X   | Cut       | Left bottom row        |
 
 ### Caps Word
 
