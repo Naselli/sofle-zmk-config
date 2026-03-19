@@ -16,19 +16,19 @@ Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard w
 
 ## Layer 0: Base (Dvorak)
 
-Homerow mods on the home row (hold for modifier, tap for letter). Dedicated Shift keys on both thumb clusters as a fallback. Backspace in the traditional top-right position.
+Homerow mods on the home row (hold for modifier, tap for letter). Space and Enter double as Shift when held. `=` in the Dvorak top-right position. Windows key on bottom-left, Caps Word on bottom-right.
 
 ```
 ╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
-│   `   │   1   │   2   │   3   │   4   │   5   │                 │   6   │   7   │   8   │   9   │   0   │ BSPC  │
+│   `   │   1   │   2   │   3   │   4   │   5   │                 │   6   │   7   │   8   │   9   │   0   │   =   │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
 │  TAB  │   '   │   ,   │   .   │   P   │   Y   │                 │   F   │   G   │   C   │   R   │   L   │   /   │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│  ESC  │ A/GUI │ O/ALT │ E/CTL │ U/SFT │   I   │                 │   D   │ H/SFT │ T/CTL │ N/ALT │ S/GUI │   -   │
+│  ESC  │   A   │ O/ALT │ E/CTL │ U/SFT │   I   │                 │   D   │ H/SFT │ T/CTL │ N/ALT │   S   │   -   │
 ├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
-│       │   ;   │   Q   │   J   │   K   │   X   │ MUTE  │ │ NEXT  │   B   │   M   │   W   │   V   │   Z   │       │
+│  GUI  │   ;   │   Q   │   J   │   K   │   X   │ MUTE  │ │ NEXT  │   B   │   M   │   W   │   V   │   Z   │CAPSWRD│
 ╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-                │  GUI  │  ALT  │  NAV  │ LSFT  │ SPACE │ │ ENTER │ RSFT  │  SYM  │  FUN  │  ALT  │
+                │CP/PST │  ALT  │  NAV  │  DEL  │SPC/SFT│ │ENT/SFT│ BSPC  │  SYM  │  FUN  │  ALT  │
                 ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
 ```
 
@@ -124,7 +124,6 @@ Hold a home row key to activate a modifier, tap for the letter. Mirrored on both
 
 | Left Hand | Right Hand |
 |-----------|------------|
-| A = GUI   | S = GUI    |
 | O = Alt   | N = Alt    |
 | E = Ctrl  | T = Ctrl   |
 | U = Shift | H = Shift  |
@@ -133,19 +132,19 @@ Hold a home row key to activate a modifier, tap for the letter. Mirrored on both
 
 ### Thumb Cluster
 
-Dedicated Shift keys on both thumbs so you don't have to rely on homerow mods while learning.
+Space and Enter double as Shift when held. Delete on left thumb, Backspace on right thumb.
 
 | Left Thumb (outer→inner) | Right Thumb (inner→outer) |
 |--------------------------|---------------------------|
-| GUI                      | Enter                     |
-| ALT                      | Shift                     |
+| Copy / Shift=Paste       | Enter / hold = Shift      |
+| ALT                      | Bspc                      |
 | NAV (layer)              | SYM (layer)               |
-| Shift                    | FUN (layer)               |
-| Space                    | ALT                       |
+| Delete                   | FUN (layer)               |
+| Space / hold = Shift     | ALT                       |
 
 ### Caps Word
 
-Activated by pressing both Shift thumb keys simultaneously. Auto-capitalizes all letters until you press space, enter, or a non-alphanumeric key. Keeps `_` and `-` active for typing `SNAKE_CASE_CONSTANTS` and `HYPHENATED-WORDS`.
+Activated by pressing Space and Enter simultaneously. Auto-capitalizes all letters until you press space, enter, or a non-alphanumeric key. Keeps `_` and `-` active for typing `SNAKE_CASE_CONSTANTS` and `HYPHENATED-WORDS`.
 
 ### Encoders
 
