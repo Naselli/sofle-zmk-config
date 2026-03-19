@@ -1,116 +1,120 @@
 # Sofle Choc Pro BT - Dvorak Layout
 
-Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard with a Dvorak layout featuring homerow mods, thumb cluster modifiers, combos, and Caps Word.
+Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard with a Dvorak layout inspired by the [yal.cc Sofle keymap](https://yal.cc/sofle-keymap/), featuring dedicated modifier keys, thumb cluster arrows, a nav toggle layer, and a numpad with mirrored keys for gaming.
 
 ## Layers
 
-| # | Name     | Activation                | Purpose                          |
-|---|----------|---------------------------|----------------------------------|
-| 0 | Base     | Default                   | Dvorak + homerow & thumb mods    |
-| 1 | Symbols  | Hold SYM (right thumb)    | Programming symbols and brackets |
-| 2 | Nav      | Hold NAV (left thumb)     | Arrows, system nav, clipboard    |
-| 3 | Function | Hold FUN (right thumb)    | F-key grid + system keys         |
-| 4 | Adjust   | Hold NAV + FUN together   | RGB, Bluetooth, power            |
+| # | Name   | Activation              | Purpose                                |
+|---|--------|-------------------------|----------------------------------------|
+| 0 | Base   | Default                 | Dvorak with Tab/Ctrl and arrows        |
+| 1 | Alt    | Hold ALT (left thumb)   | F-keys left, navigation right          |
+| 2 | Nav    | Toggle from ALT layer   | Persistent nav block on right hand     |
+| 3 | Num    | Hold NUM (right thumb)  | Numpad right, mirrored Dvorak left     |
+| 4 | Adjust | Hold ALT + NUM together | RGB, Bluetooth, power, bootloader      |
 
 ---
 
 ## Layer 0: Base (Dvorak)
 
-Homerow mods shown as `tap/hold`. Thumb cluster has Ctrl on both sides, Space/Enter double as Shift when held.
+Tab doubles as LCtrl on hold. `=` doubles as RCtrl on hold. Arrow keys on the right thumb cluster. Enter doubles as NUM layer on hold.
 
 ```
 ╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
-│   `   │   1   │   2   │   3   │   4   │   5   │                 │   6   │   7   │   8   │   9   │   0   │   `   │
+│   `   │   1   │   2   │   3   │   4   │   5   │                 │   6   │   7   │   8   │   9   │   0   │ BSPC  │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│  ESC  │   '   │   ,   │   .   │   P   │   Y   │                 │   F   │   G   │   C   │   R   │   L   │ BSPC  │
+│TAB/CTL│   '   │   ,   │   .   │   P   │   Y   │                 │   F   │   G   │   C   │   R   │   L   │   /   │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│  TAB  │ A/GUI │ O/ALT │ E/CTL │ U/SFT │   I   │                 │   D   │ H/SFT │ T/CTL │ N/ALT │ S/GUI │   -   │
+│ LSFT  │   A   │   O   │   E   │   U   │   I   │                 │   D   │   H   │   T   │   N   │   S   │ =/CTL │
 ├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
 │       │   ;   │   Q   │   J   │   K   │   X   │ MUTE  │ │ PLAY  │   B   │   M   │   W   │   V   │   Z   │       │
 ╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-                │  ALT  │  CTL  │  NAV  │ BSPC  │SPC/SFT│ │ENT/SFT│  SYM  │  FUN  │  CTL  │  ALT  │
+                │  GUI  │  ALT  │ SPACE │MO ALT │ENT/NUM│ │MO NUM │   -   │   \   │  LEFT │ RIGHT │
                 ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
 ```
 
-**Encoders:** Left = Volume Up/Down | Right = Prev/Next Track
+**Encoders:** Left = Scroll Down/Up | Right = Volume Down/Up
 
 ---
 
-## Layer 1: Symbols (hold SYM)
+## Layer 1: Alt (hold ALT)
 
-Brackets grouped on right hand: `[ ]` top, `{ }` home, `( )` bottom.
+F-keys on the left, navigation and media on the right. Left home row has explicit modifiers for Shift+Arrow text selection. Toggle NAV layer from left thumb.
 
 ```
 ╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
-│   ~   │   !   │   @   │   #   │   $   │   %   │                 │   ^   │   &   │   *   │   (   │   )   │   ~   │
+│  ESC  │  F1   │  F2   │  F3   │  F4   │  F5   │                 │  F6   │  F7   │  F8   │  F9   │  F10  │ BSPC  │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│       │   `   │   <   │   >   │   "   │   '   │                 │   &   │   :   │   [   │   ]   │   %   │  DEL  │
+│CAPSWRD│  F11  │  F12  │       │ PSCR  │       │                 │       │ HOME  │  UP   │  END  │  DEL  │ PG UP │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│       │   !   │   -   │   +   │   =   │   #   │                 │   |   │   ;   │   {   │   }   │   @   │   \   │
+│       │  GUI  │  SFT  │  CTL  │  ALT  │       │                 │       │ LEFT  │ DOWN  │ RIGHT │       │ PG DN │
 ├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
-│       │   ^   │   /   │   *   │   ~   │   $   │       │ │       │   _   │   ?   │   (   │   )   │   !   │       │
+│       │       │       │       │       │       │       │ │       │       │       │       │ PREV  │ NEXT  │       │
 ╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-                │       │       │       │       │       │ │       │ >>>>> │       │       │       │
+                │ SPACE │  INS  │TG NAV │ >>>>> │ ENTER │ │       │       │       │       │ PAUSE │
                 ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
 ```
 
-`>>>>>` = held layer key. Blank = transparent (falls through to base layer).
+**Encoders:** Both = Volume Down/Up
 
 ---
 
-## Layer 2: Navigation (hold NAV)
+## Layer 2: Nav Toggle (toggle from ALT)
 
-System navigation with arrows, page controls, and clipboard shortcuts. Left home row has explicit modifiers for Shift+Arrow text selection. Top-left corner has bootloader, studio unlock, and reset keys.
-
-```
-╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
-│ BOOT  │STUDIO │       │       │       │       │                 │       │       │       │       │       │       │
-├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│ RESET │       │       │       │       │       │                 │ HOME  │ PG DN │ PG UP │  END  │       │  DEL  │
-├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│       │  GUI  │  ALT  │  CTL  │  SFT  │       │                 │   <-  │   v   │   ^   │  ->   │       │ BSPC  │
-├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
-│       │ UNDO  │  CUT  │ COPY  │ PASTE │       │       │ │       │       │       │       │       │       │       │
-╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-                │       │       │ >>>>> │       │       │ │       │       │       │       │       │
-                ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
-```
-
----
-
-## Layer 3: Function (hold FUN)
-
-F-keys in a 3x3 grid on the left hand. Right home row has explicit modifiers for combos like Shift+F5.
+Activated by pressing TG NAV on the ALT layer. Only overwrites the right-side letter keys with a nav block — left side and symbols pass through to base. Press TG NAV on right thumb to deactivate.
 
 ```
 ╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
 │       │       │       │       │       │       │                 │       │       │       │       │       │       │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│       │  F12  │  F7   │  F8   │  F9   │ PSCR  │                 │       │       │       │       │       │       │
+│       │       │       │       │       │       │                 │ PG UP │ HOME  │  UP   │  END  │       │  DEL  │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│       │  F11  │  F4   │  F5   │  F6   │ SLCK  │                 │       │  SFT  │  CTL  │  ALT  │  GUI  │       │
+│       │       │       │       │       │       │                 │ PG DN │ LEFT  │ DOWN  │ RIGHT │       │       │
 ├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
-│       │  F10  │  F1   │  F2   │  F3   │ PAUSE │       │ │       │       │       │       │       │       │       │
+│       │       │       │       │       │       │       │ │       │       │       │       │       │       │       │
 ╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-                │       │       │       │       │       │ │       │       │ >>>>> │       │       │
+                │       │       │       │       │       │ │       │       │       │       │TG NAV │
                 ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
 ```
 
+Blank = transparent (falls through to base layer).
+
 ---
 
-## Layer 4: Adjust (hold NAV + FUN)
+## Layer 3: Numpad (hold NUM)
 
-Activated by holding both NAV and FUN simultaneously. Bluetooth pairing, RGB underglow controls, and power management.
+Right side is a full numpad. Left side mirrors the right-hand Dvorak keys for one-handed gaming (right hand on mouse).
 
 ```
 ╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
-│BT CLR │ BT 1  │ BT 2  │ BT 3  │ BT 4  │ BT 5  │                 │       │       │       │       │       │       │
+│   [   │   6   │   7   │   8   │   9   │   0   │                 │NUM LK │   /   │   *   │   (   │   )   │ BSPC  │
+├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
+│ BSPC  │   F   │   G   │   C   │   R   │   L   │                 │ SPACE │  KP7  │  KP8  │  KP9  │       │  DEL  │
+├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
+│   =   │   D   │   H   │   T   │   N   │   S   │                 │   +   │  KP4  │  KP5  │  KP6  │   -   │   =   │
+├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+│   ]   │   B   │   M   │   W   │   V   │   Z   │       │ │       │       │  KP1  │  KP2  │  KP3  │KP ENT │       │
+╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
+                │   -   │   \   │   /   │  ESC  │ ENTER │ │ ENTER │  KP0  │       │   ,   │       │
+                ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
+```
+
+**Encoders:** Left = Arrow Left/Right | Right = Volume Down/Up
+
+---
+
+## Layer 4: Adjust (hold ALT + NUM)
+
+Activated by holding both ALT and NUM simultaneously. Bluetooth pairing, RGB underglow controls, power management, and flashing.
+
+```
+╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
+│ BOOT  │ BT 1  │ BT 2  │ BT 3  │ BT 4  │ BT 5  │                 │       │       │       │       │       │ RESET │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
 │EP TOG │RGB HU-│RGB HU+│RGB SA-│RGB SA+│RGB EFF│                 │       │       │       │       │       │       │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
 │       │RGB BR-│RGB BR+│       │       │       │                 │       │       │       │       │       │       │
 ├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
-│       │       │       │       │       │STUDIO │RGB TOG│ │       │       │       │       │       │       │       │
+│BT CLR │       │       │       │       │STUDIO │RGB TOG│ │       │       │       │       │       │       │       │
 ╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
                 │       │       │       │       │       │ │       │       │       │       │       │
                 ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
@@ -120,53 +124,44 @@ Activated by holding both NAV and FUN simultaneously. Bluetooth pairing, RGB und
 
 ## Features
 
-### Homerow Mods (GACS)
+### Modifier Keys
 
-Hold a home row key to activate a modifier, tap for the letter. Mirrored on both halves.
-
-| Left Hand | Right Hand |
-|-----------|------------|
-| A = GUI   | S = GUI    |
-| O = Alt   | N = Alt    |
-| E = Ctrl  | T = Ctrl   |
-| U = Shift | H = Shift  |
-
-**Anti-misfire settings:** `tapping-term-ms = 280`, `require-prior-idle-ms = 150` (typing within 150ms always produces letters), `quick-tap-ms = 200`, opposite-hand-only triggering.
+- **Tab/Ctrl:** Hold Tab for LCtrl, tap for Tab
+- **=/Ctrl:** Hold `=` for RCtrl, tap for `=`
+- **Enter/NUM:** Hold Enter for NUM layer, tap for Enter
+- **ALT layer home row:** Explicit GUI, Shift, Ctrl, Alt for modifier combos (e.g., Shift+Arrow for text selection)
 
 ### Thumb Cluster
 
-| Left Thumb           | Right Thumb          |
-|----------------------|----------------------|
-| ALT                  | ENTER / hold = Shift |
-| CTRL                 | SYM (layer)          |
-| NAV (layer)          | FUN (layer)          |
-| Backspace            | CTRL                 |
-| SPACE / hold = Shift | ALT                  |
+| Left Thumb         | Right Thumb        |
+|--------------------|--------------------|
+| GUI                | MO NUM             |
+| ALT                | `-`                |
+| Space              | `\`                |
+| MO ALT (layer)     | Left Arrow         |
+| Enter / NUM (hold) | Right Arrow        |
 
-### Combos
+### Nav Toggle
 
-Press two adjacent keys simultaneously (within 60ms) on the base layer:
+Activated from the ALT layer (hold ALT, press TG NAV on left thumb). Provides a persistent nav block on the right hand so you can navigate without holding a layer key. Press TG NAV on the right thumb to deactivate.
 
-| Keys    | Output    | Position               |
-|---------|-----------|------------------------|
-| U + I   | Escape    | Left home row          |
-| H + T   | Caps Word | Right home row         |
-| , + .   | Backspace | Left top row           |
-| Q + J   | Tab       | Left bottom row        |
-| M + W   | Enter     | Right bottom row       |
-| ; + Q   | Paste     | Left bottom row        |
-| J + K   | Copy      | Left bottom row        |
-| K + X   | Cut       | Left bottom row        |
+### Numpad Mirror
+
+The NUM layer mirrors right-hand Dvorak keys onto the left side for one-handed gaming — your left hand gets access to F, G, C, R, L, D, H, T, N, S, etc. while your right hand stays on the mouse.
 
 ### Caps Word
 
-Activated via the H+T combo. Auto-capitalizes all letters until you press space, enter, or a non-alphanumeric key. Keeps `_` and `-` active for typing `SNAKE_CASE_CONSTANTS` and `HYPHENATED-WORDS`.
+Activated from the ALT layer (top-left key). Auto-capitalizes all letters until you press space, enter, or a non-alphanumeric key. Keeps `_` and `-` active for typing `SNAKE_CASE_CONSTANTS` and `HYPHENATED-WORDS`.
 
 ### Encoders
 
-| Layer    | Left Encoder     | Right Encoder     |
-|----------|------------------|-------------------|
-| All      | Volume Down/Up   | Prev/Next Track   |
+| Layer  | Left Encoder       | Right Encoder      |
+|--------|--------------------|--------------------|
+| Base   | Scroll Down/Up     | Volume Down/Up     |
+| Alt    | Volume Down/Up     | Volume Down/Up     |
+| Nav    | Volume Down/Up     | Volume Down/Up     |
+| Num    | Arrow Left/Right   | Volume Down/Up     |
+| Adjust | Volume Down/Up     | Volume Down/Up     |
 
 ---
 
