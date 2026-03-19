@@ -13,10 +13,9 @@
 
 #define BASE 0
 #define SYM 1
-#define NUM 2
-#define NAV 3
-#define FUN 4
-#define ADJUST 5
+#define NAV 2
+#define FUN 3
+#define ADJUST 4
 
 /* Custom caps_word with continue-list for SNAKE_CASE and hyphenated-words */
 &caps_word {
@@ -173,7 +172,7 @@
 &kp ESC        &kp SQT         &kp COMMA      &kp PERIOD      &kp P            &kp Y                               &kp F        &kp G           &kp C          &kp R          &kp L            &kp BSPC
 &kp TAB        &HML LGUI A     &HML LALT O    &HML LCTRL E    &HMShiftL LSHFT U &kp I                              &kp D        &HMShiftR RSHFT H &HMR RCTRL T &HMR RALT N    &HMR RGUI S      &kp MINUS
 &none          &kp SEMICOLON   &kp Q          &kp J           &kp K            &kp X  &kp C_MUTE    &kp C_PLAY     &kp B        &kp M           &kp W          &kp V          &kp Z            &none
-                               &kp LALT       &kp LCTRL        &mo NAV          &mo NUM &mt LSHFT SPACE &mt RSHFT ENTER &mo SYM     &mo FUN         &kp RCTRL      &kp RALT
+                               &kp LALT       &kp LCTRL        &mo NAV          &kp BSPC &mt LSHFT SPACE &mt RSHFT ENTER &mo SYM     &mo FUN         &kp RCTRL      &kp RALT
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
         };
@@ -185,18 +184,6 @@
 &trans         &kp GRAVE       &kp LT         &kp GT          &kp DQT          &kp SQT                             &kp AMPS     &kp COLON       &kp LBKT       &kp RBKT       &kp PRCNT        &kp DEL
 &trans         &kp EXCL        &kp MINUS      &kp PLUS        &kp EQUAL        &kp HASH                            &kp PIPE     &kp SEMI        &kp LBRC       &kp RBRC       &kp AT           &kp BSLH
 &trans         &kp CARET       &kp FSLH       &kp ASTRK       &kp TILDE        &kp DLLR  &trans        &trans      &kp UNDER    &kp QMARK       &kp LPAR       &kp RPAR       &kp EXCL         &trans
-                               &trans         &trans          &trans           &trans    &trans        &trans      &trans       &trans          &trans         &trans
-            >;
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
-        };
-
-        num_layer {
-            display-name = "numbers";
-            bindings = <
-&kp F12        &kp F1          &kp F2         &kp F3          &kp F4           &kp F5                              &kp F6       &kp F7          &kp F8         &kp F9         &kp F10          &kp F11
-&trans         &trans          &trans         &trans          &trans           &trans                              &kp MINUS    &kp N7          &kp N8         &kp N9         &kp FSLH         &trans
-&trans         &trans          &trans         &trans          &trans           &trans                              &kp PLUS     &kp N4          &kp N5         &kp N6         &kp ASTRK        &trans
-&trans         &trans          &trans         &trans          &trans           &trans    &trans        &trans      &kp DOT      &kp N1          &kp N2         &kp N3         &kp N0           &trans
                                &trans         &trans          &trans           &trans    &trans        &trans      &trans       &trans          &trans         &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;

@@ -8,10 +8,9 @@ Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard w
 |---|----------|---------------------------|----------------------------------|
 | 0 | Base     | Default                   | Dvorak + homerow & thumb mods    |
 | 1 | Symbols  | Hold SYM (right thumb)    | Programming symbols and brackets |
-| 2 | Numbers  | Hold NUM (left thumb)     | Right-hand numpad + F-keys       |
-| 3 | Nav      | Hold NAV (left thumb)     | Arrows, system nav, clipboard    |
-| 4 | Function | Hold FUN (right thumb)    | F-key grid + system keys         |
-| 5 | Adjust   | Hold NAV + FUN together   | RGB, Bluetooth, power            |
+| 2 | Nav      | Hold NAV (left thumb)     | Arrows, system nav, clipboard    |
+| 3 | Function | Hold FUN (right thumb)    | F-key grid + system keys         |
+| 4 | Adjust   | Hold NAV + FUN together   | RGB, Bluetooth, power            |
 
 ---
 
@@ -29,7 +28,7 @@ Homerow mods shown as `tap/hold`. Thumb cluster has Ctrl on both sides, Space/En
 ├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
 │       │   ;   │   Q   │   J   │   K   │   X   │ MUTE  │ │ PLAY  │   B   │   M   │   W   │   V   │   Z   │       │
 ╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-                │  ALT  │  CTL  │  NAV  │  NUM  │SPC/SFT│ │ENT/SFT│  SYM  │  FUN  │  CTL  │  ALT  │
+                │  ALT  │  CTL  │  NAV  │ BSPC  │SPC/SFT│ │ENT/SFT│  SYM  │  FUN  │  CTL  │  ALT  │
                 ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
 ```
 
@@ -59,27 +58,7 @@ Brackets grouped on right hand: `[ ]` top, `{ }` home, `( )` bottom.
 
 ---
 
-## Layer 2: Numbers (hold NUM)
-
-Right-hand numpad layout with arithmetic operators.
-
-```
-╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
-│  F12  │  F1   │  F2   │  F3   │  F4   │  F5   │                 │  F6   │  F7   │  F8   │  F9   │  F10  │  F11  │
-├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│       │       │       │       │       │       │                 │   -   │   7   │   8   │   9   │   /   │       │
-├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│       │       │       │       │       │       │                 │   +   │   4   │   5   │   6   │   *   │       │
-├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
-│       │       │       │       │       │       │       │ │       │   .   │   1   │   2   │   3   │   0   │       │
-╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-                │       │       │       │ >>>>> │       │ │       │       │       │       │       │
-                ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
-```
-
----
-
-## Layer 3: Navigation (hold NAV)
+## Layer 2: Navigation (hold NAV)
 
 System navigation with arrows, page controls, and clipboard shortcuts. Left home row has explicit modifiers for Shift+Arrow text selection. Top-left corner has bootloader, studio unlock, and reset keys.
 
@@ -99,7 +78,7 @@ System navigation with arrows, page controls, and clipboard shortcuts. Left home
 
 ---
 
-## Layer 4: Function (hold FUN)
+## Layer 3: Function (hold FUN)
 
 F-keys in a 3x3 grid on the left hand. Right home row has explicit modifiers for combos like Shift+F5.
 
@@ -119,7 +98,7 @@ F-keys in a 3x3 grid on the left hand. Right home row has explicit modifiers for
 
 ---
 
-## Layer 5: Adjust (hold NAV + FUN)
+## Layer 4: Adjust (hold NAV + FUN)
 
 Activated by holding both NAV and FUN simultaneously. Bluetooth pairing, RGB underglow controls, and power management.
 
@@ -161,7 +140,7 @@ Hold a home row key to activate a modifier, tap for the letter. Mirrored on both
 | ALT                  | ENTER / hold = Shift |
 | CTRL                 | SYM (layer)          |
 | NAV (layer)          | FUN (layer)          |
-| NUM (layer)          | CTRL                 |
+| Backspace            | CTRL                 |
 | SPACE / hold = Shift | ALT                  |
 
 ### Combos
