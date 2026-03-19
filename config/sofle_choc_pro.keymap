@@ -18,6 +18,11 @@
 #define FUN 4
 #define ADJUST 5
 
+/* Custom caps_word with continue-list for SNAKE_CASE and hyphenated-words */
+&caps_word {
+    continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
+};
+
 / {
     behaviors {
         HML: HML {
@@ -87,11 +92,6 @@
             tapping-term-ms = <200>;
             bindings = <&sk LCTRL>, <&sk LALT>;
         };
-    };
-
-    /* Custom caps_word with continue-list for SNAKE_CASE and hyphenated-words */
-    &caps_word {
-        continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
     };
 
     combos {
