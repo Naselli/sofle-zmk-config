@@ -17,6 +17,7 @@
 #define SYM 2
 #define FUN 3
 #define ADJUST 4
+#define GAME 5
 
 /* Custom caps_word with continue-list for SNAKE_CASE and hyphenated-words */
 &caps_word {
@@ -140,13 +141,25 @@
         adjust_layer {
             display-name = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                             &none  &none  &none  &none  &none  &none
+&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                             &none  &none  &none  &none  &none  &tog GAME
 &ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF                           &none  &none  &none  &none  &none  &none
 &none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none                                     &none  &none  &none  &none  &none  &none
 &none              &none            &none            &none            &none            &studio_unlock  &rgb_ug RGB_TOG     &none  &none  &none  &none  &none  &none  &none
                                     &none            &none            &none            &none           &none               &none  &none  &none  &none  &none
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
+        };
+
+        game_layer {
+            display-name = "game";
+            bindings = <
+&kp GRAVE   &kp N1        &kp N2       &kp N3        &kp N4        &kp N5                              &kp N6   &kp N7        &kp N8       &kp N9       &kp N0        &kp EQUAL
+&kp TAB     &kp SQT       &kp COMMA    &kp DOT       &kp P         &kp Y                               &kp F    &kp G         &kp C        &kp R        &kp L         &kp FSLH
+&kp ESC     &kp A         &kp O        &kp E         &kp U         &kp I                               &kp D    &kp H         &kp T        &kp N        &kp S         &kp MINUS
+&kp LGUI    &kp SEMI      &kp Q        &kp J         &kp K         &kp X      &kp C_MUTE  &kp C_NEXT   &kp B    &kp M         &kp W        &kp V        &kp Z         &tog GAME
+                          &kp LCTRL    &kp LALT      &kp SPACE     &kp DEL    &kp LSHFT               &kp RSHFT &kp BSPC      &kp ENTER    &mo FUN      &kp RALT
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
         };
     };
 };
