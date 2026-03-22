@@ -11,7 +11,7 @@ Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard w
 | 2 | Symbols  | Hold SYM (right thumb)  | Programming symbols and brackets |
 | 3 | Function | Hold FUN (right thumb)  | F-key grid + system keys         |
 | 4 | Adjust   | Hold NAV + FUN together | RGB, Bluetooth, power            |
-| 5 | Game     | Toggle from Adjust      | Plain Dvorak, no hold-tap        |
+| 5 | Game     | Toggle from Adjust      | Plain QWERTY, no hold-tap        |
 
 ---
 
@@ -119,17 +119,17 @@ Activated by holding both NAV and FUN simultaneously. Bluetooth pairing, RGB und
 
 ## Layer 5: Game (toggle from Adjust)
 
-Plain Dvorak layout with all hold-tap behaviors removed — no homerow mods, no mod-tap Space/Enter. Every key is a simple keypress for reliable gaming input. Toggle on from the Adjust layer (top-right), toggle off with bottom-right key.
+Plain QWERTY layout with all hold-tap behaviors removed — no homerow mods, no mod-tap Space/Enter. Every key is a simple keypress for reliable gaming input. Toggle on from the Adjust layer (top-right), toggle off with bottom-right key.
 
 ```
 ╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
 │   `   │   1   │   2   │   3   │   4   │   5   │                 │   6   │   7   │   8   │   9   │   0   │   =   │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│  TAB  │   '   │   ,   │   .   │   P   │   Y   │                 │   F   │   G   │   C   │   R   │   L   │   /   │
+│  TAB  │   Q   │   W   │   E   │   R   │   T   │                 │   Y   │   U   │   I   │   O   │   P   │   \   │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
-│  ESC  │   A   │   O   │   E   │   U   │   I   │                 │   D   │   H   │   T   │   N   │   S   │   -   │
+│  ESC  │   A   │   S   │   D   │   F   │   G   │                 │   H   │   J   │   K   │   L   │   ;   │   '   │
 ├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
-│ SHIFT │   ;   │   Q   │   J   │   K   │   X   │ MUTE  │ │ NEXT  │   B   │   M   │   W   │   V   │   Z   │ GAME  │
+│ SHIFT │   Z   │   X   │   C   │   V   │   B   │ MUTE  │ │ NEXT  │   N   │   M   │   ,   │   .   │   /   │ GAME  │
 ╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
                 │  CTL  │  ALT  │ SPACE │  DEL  │ SHIFT │ │ SHIFT │ BSPC  │ ENTER │  FUN  │  ALT  │
                 ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
