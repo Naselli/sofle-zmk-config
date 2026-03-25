@@ -12,6 +12,7 @@ Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard w
 | 3 | Function | Hold FUN (right thumb)  | F-key grid + system keys         |
 | 4 | Adjust   | Hold NAV + FUN together | RGB, Bluetooth, power            |
 | 5 | Game     | Toggle from Adjust      | Plain QWERTY, no hold-tap        |
+| 6 | Numpad   | Hold NUM (left thumb)   | Right-hand numpad                |
 
 ---
 
@@ -29,7 +30,7 @@ Homerow mods on the home row (hold for modifier, tap for letter). Space and Ente
 ├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
 │  GUI  │   ;   │   Q   │   J   │   K   │   X   │ MUTE  │ │ NEXT  │   B   │   M   │   W   │   V   │   Z   │CAPSWRD│
 ╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-                │CP/PST │  ALT  │  NAV  │  DEL  │SPC/SFT│ │ENT/SFT│ BSPC  │  SYM  │  FUN  │  ALT  │
+                │CP/PST │  NUM  │  NAV  │  DEL  │SPC/SFT│ │ENT/SFT│ BSPC  │  SYM  │  FUN  │  ALT  │
                 ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
 ```
 
@@ -137,6 +138,26 @@ Plain QWERTY layout with all hold-tap behaviors removed — no homerow mods, no 
 
 ---
 
+## Layer 6: Numpad (hold NUM)
+
+Right-hand numpad layout with arithmetic operators. Left home row has explicit modifiers for combos like Ctrl+numpad keys.
+
+```
+╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
+│       │       │       │       │       │       │                 │NUMLOCK│  KP7  │  KP8  │  KP9  │  KP-  │  KP/  │
+├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
+│       │       │       │       │       │       │                 │       │  KP4  │  KP5  │  KP6  │  KP+  │  KP*  │
+├───────┼───────┼───────┼───────┼───────┼───────┤                 ├───────┼───────┼───────┼───────┼───────┼───────┤
+│       │  GUI  │  ALT  │  CTL  │  SFT  │       │                 │       │  KP1  │  KP2  │  KP3  │  KP=  │ BSPC  │
+├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+│       │       │       │       │       │       │       │ │       │       │  KP0  │  KP0  │  KP.  │KP ENT │       │
+╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
+                │       │ >>>>> │       │       │       │ │       │       │       │       │       │
+                ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
+```
+
+---
+
 ## Features
 
 ### Homerow Mods (GACS)
@@ -158,7 +179,7 @@ Space and Enter double as Shift when held. Delete on left thumb, Backspace on ri
 | Left Thumb (outer→inner) | Right Thumb (inner→outer) |
 |--------------------------|---------------------------|
 | Copy / Shift=Paste       | Enter / hold = Shift      |
-| ALT                      | Bspc                      |
+| NUM (layer)              | Bspc                      |
 | NAV (layer)              | SYM (layer)               |
 | Delete                   | FUN (layer)               |
 | Space / hold = Shift     | ALT                       |
