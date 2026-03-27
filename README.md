@@ -1,6 +1,6 @@
 # Sofle Choc Pro BT - Dvorak Layout
 
-Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard with a beginner-friendly Dvorak layout featuring homerow mods, dedicated thumb Shift keys, and clean layer organization.
+Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard with a beginner-friendly Dvorak layout featuring homerow mods and clean layer organization.
 
 ## Layers
 
@@ -18,7 +18,7 @@ Custom ZMK firmware configuration for the **Sofle Choc Pro BT** split keyboard w
 
 ## Layer 0: Base (Dvorak)
 
-Homerow mods on the home row (hold for modifier, tap for letter). Space and Enter double as Shift when held. `=` in the Dvorak top-right position. Windows key on bottom-left, Caps Word on bottom-right.
+Homerow mods on the home row (hold for modifier, tap for letter). `=` in the Dvorak top-right position. Windows key on bottom-left, Caps Word on bottom-right.
 
 ```
 ╭───────┬───────┬───────┬───────┬───────┬───────╮                 ╭───────┬───────┬───────┬───────┬───────┬───────╮
@@ -30,7 +30,7 @@ Homerow mods on the home row (hold for modifier, tap for letter). Space and Ente
 ├───────┼───────┼───────┼───────┼───────┼───────┼───────╮ ╭───────┼───────┼───────┼───────┼───────┼───────┼───────┤
 │  GUI  │   ;   │   Q   │   J   │   K   │   X   │ MUTE  │ │ NEXT  │   B   │   M   │   W   │   V   │   Z   │CAPSWRD│
 ╰───────┴───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-                │CP/PST │  NUM  │  NAV  │  DEL  │SPC/SFT│ │ENT/SFT│ BSPC  │  SYM  │  FUN  │  ALT  │
+                │CP/PST │  NUM  │  NAV  │  DEL  │ SPACE │ │ ENTER │ BSPC  │  SYM  │  FUN  │  ALT  │
                 ╰───────┴───────┴───────┴───────┴───────╯ ╰───────┴───────┴───────┴───────┴───────╯
 ```
 
@@ -174,19 +174,19 @@ Hold a home row key to activate a modifier, tap for the letter. Mirrored on both
 
 ### Thumb Cluster
 
-Space and Enter double as Shift when held. Delete on left thumb, Backspace on right thumb.
+Delete on left thumb, Backspace on right thumb. Shift is handled entirely by homerow mods.
 
 | Left Thumb (outer→inner) | Right Thumb (inner→outer) |
 |--------------------------|---------------------------|
-| Copy / Shift=Paste       | Enter / hold = Shift      |
+| Copy / Shift=Paste       | Enter                     |
 | NUM (layer)              | Bspc                      |
 | NAV (layer)              | SYM (layer)               |
 | Delete                   | FUN (layer)               |
-| Space / hold = Shift     | ALT                       |
+| Space                    | ALT                       |
 
 ### Caps Word
 
-Activated by pressing Space and Enter simultaneously. Auto-capitalizes all letters until you press space, enter, or a non-alphanumeric key. Keeps `_` and `-` active for typing `SNAKE_CASE_CONSTANTS` and `HYPHENATED-WORDS`.
+Activated by tapping Space and Enter simultaneously. Auto-capitalizes all letters until you press space, enter, or a non-alphanumeric key. Keeps `_` and `-` active for typing `SNAKE_CASE_CONSTANTS` and `HYPHENATED-WORDS`.
 
 ### Encoders
 

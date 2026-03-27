@@ -102,7 +102,7 @@
 &kp TAB    &kp SQT   &kp COMMA    &kp DOT       &kp P         &kp Y    &kp F                                       &kp G         &kp C         &kp R        &kp L   &kp FSLH
 &kp ESC    &kp A     &hml LALT O  &hml LCTRL E  &hml LSHFT U  &kp I    &kp D                                       &hmr RSHFT H  &hmr RCTRL T  &hmr RALT N  &kp S   &kp MINUS
 &kp LGUI   &kp SEMI  &kp Q        &kp J         &kp K         &kp X    &kp C_MUTE       &kp C_NEXT       &kp B     &kp M         &kp W         &kp V        &kp Z   &caps_word
-                     &copy_paste  &mo NUM       &mo NAV       &kp DEL  &mt LSHFT SPACE  &mt RSHFT ENTER  &kp BSPC  &mo SYM       &mo FUN       &kp RALT
+                     &copy_paste  &mo NUM       &mo NAV       &kp DEL  &kp SPACE  &kp ENTER  &kp BSPC  &mo SYM       &mo FUN       &kp RALT
             >;
 
             sensor-bindings =
